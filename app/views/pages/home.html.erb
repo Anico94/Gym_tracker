@@ -1,0 +1,9 @@
+<h1>Gym Trackr</h1>
+<p>Welcome to your one and only fitness tracker</p>
+
+<%= button_to "Sign Up", new_user_path, :method => "get" %>
+<%= button_to "Login", login_path, :method => "get"%>
+
+<% if @current_user.present? %>
+    <h2>Welcome Back <%= @current_user.email %></h2>
+<% end %>

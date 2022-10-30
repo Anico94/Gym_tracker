@@ -1,0 +1,14 @@
+<h1>Edit you're information below</h1>
+
+<%= form_for @current_user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :height %>
+    <%= f.number_field :height %>
+
+    <%= f.label :weight %>
+    <%= f.number_field :weight %>
+
+    <%= f.submit "Save Information" %>
+<% end %>
