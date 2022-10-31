@@ -1,2 +1,21 @@
-<h1>Workouts#show</h1>
-<p>Find me in app/views/workouts/show.html.erb</p>
+<h1>Workout <%= @workout.date %></h1>
+
+
+
+<% @workout.exercises.each_with_index do |exercise, index| %>
+    <section class="exercise">
+        <h3>Exercise <%= index + 1 %>: <%= exercise.name%></h3>
+        <p><%= "Weight: #{exercise.weight}" if exercise.weight.present?  %></p>
+        <p><%= "Reps #{exercise.repetitions}" if exercise.repetitions.present? %></p>
+        <p><%= "Sets #{exercise.sets}" if exercise.sets.present? %></p>
+        <p><%= "Distance #{exercise.distance}" if exercise.distance.present? %></p>
+        <p><%= "Time #{exercise.duration}" if exercise.duration.present? %></p>
+    </section>
+<% end %>
+
+
+<%= link_to 'Back to Workouts', workouts_path %>
+<%= link_to 'Show Workout', workout_path %>
+<%= link_to 'Delete Workout' , @workout, :method => :delete, :data => {:confirm => "Are you sure"}%>
+
+

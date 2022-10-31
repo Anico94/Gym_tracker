@@ -1,0 +1,13 @@
+<%= form_for @workout do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <%= f.label :focus %>
+    <%= f.text_field :focus %>
+
+    <%= f.label :duration %>
+    <%= f.number_field :duration, :placeholder => "In hours" %>
+
+    <%= f.submit %>
+<% end %>
+

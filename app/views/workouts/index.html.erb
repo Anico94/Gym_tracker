@@ -1,2 +1,19 @@
-<h1>Workouts#index</h1>
-<p>Find me in app/views/workouts/index.html.erb</p>
+<% if @current_user.name.present? %>
+    <h1><%= @current_user.name %>'s Workouts</h1>
+<% else%>
+    <h1>Your Workouts</h1>
+<% end %>
+
+<!-- Can I put these workouts into date order-->
+<% @current_user.workouts.each do |workout| %>
+    <section class="workout">
+        <p>Date: <%= workout.date %></p>
+        <p>Session Focus: <%= workout.focus %></p>
+        <p>Duration: <%= workout.duration %></p>
+        <p>Contains <%= workout.exercises.count %> logged exercises</p>
+        <p><%= link_to 'View details', workout_path(workout.id) %> </p>
+        <p><%= link_to 'Edit Workout Info', edit_workout_path(workout.id) %></p>
+    </section>
+<% end %>
+
+<%= link_to "Add a workout", new_workout_path %>
