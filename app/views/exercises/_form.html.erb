@@ -1,0 +1,23 @@
+
+<%= form_for [@workout, @exercise]  do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+
+    <%= f.label :weight %>
+    <%= f.number_field :weight, :placeholder => "in kilograms" %>
+
+    <%= f.label :repetitions %>
+    <%= f.number_field :repetitions %>
+
+    <%= f.label :sets %>
+    <%= f.number_field :sets %>
+
+    <%= f.label :distance %>
+    <%= f.number_field :distance, :placeholder => "in kilometers" %>
+
+    <%= f.label :duration %>
+    <%= f.number_field :duration, :placeholder => "in minutes" %>
+
+    <%= f.submit %>
+
+<% end %>

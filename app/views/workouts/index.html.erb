@@ -11,8 +11,8 @@
         <p>Session Focus: <%= workout.focus %></p>
         <p>Duration: <%= workout.duration %></p>
         <p>Contains <%= workout.exercises.count %> logged exercises</p>
-        <p><%= link_to 'View details', workout_path(workout.id) %> </p>
-        <p><%= link_to 'Edit Workout Info', edit_workout_path(workout.id) %></p>
+        <%= link_to 'View details', workout_path(workout.id) %>
+        <%= link_to 'Edit Workout Info', edit_workout_path(workout.id) %>
     </section>
 <% end %>
 

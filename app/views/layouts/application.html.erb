@@ -10,18 +10,19 @@
   </head>
 
   <body>
-
-  <nav>
-    <% if @current_user.present? %>
-    <%= link_to "Profile", user_path(@current_user) %>
-      <%= link_to "Sign Out", login_path, :method => 'delete'  %>
-    <% else%>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'All users', users_path %>
-    <% end %>
-  </nav>
-
-    <%= yield %>
-    
+    <div class="container text-center">
+      <nav>
+        <% if @current_user.present? %>
+          <%= link_to "Profile", user_path(@current_user) %>
+          <%= link_to "Workouts", workouts_path %>
+          <%= link_to "Sign Out", login_path, :method => 'delete' %>
+        <% else%>
+          <%= link_to 'Home', root_path %>
+          <%= link_to 'All users', users_path %>
+        <% end %>
+      </nav>
+      
+      <%= yield %>
+    </div>
   </body>
 </html>

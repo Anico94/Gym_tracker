@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
 
   resources :users
-  resources :workouts
-  resources :exercises
+  resources :exercises, :except => [:new, :create]
+  resources :workouts do
+    resources :exercises, :only => [:new, :create]
+  end 
 
 end

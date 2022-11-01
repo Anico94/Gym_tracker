@@ -2,7 +2,7 @@
 
 
 
-<% @workout.exercises.each_with_index do |exercise, index| %>
+<% @workout.exercises.order(:created_at).each_with_index do |exercise, index| %>
     <section class="exercise">
         <h3>Exercise <%= index + 1 %>: <%= exercise.name%></h3>
         <p><%= "Weight: #{exercise.weight}" if exercise.weight.present?  %></p>
@@ -10,12 +10,14 @@
         <p><%= "Sets #{exercise.sets}" if exercise.sets.present? %></p>
         <p><%= "Distance #{exercise.distance}" if exercise.distance.present? %></p>
         <p><%= "Time #{exercise.duration}" if exercise.duration.present? %></p>
+        <%= link_to 'Edit Exercise', edit_exercise_path(exercise.id) %>
+        <%= link_to 'Delete Exercise', exercise_path(exercise.id), :method => :delete, :data => {:confirm => "Are you sure"} %>
     </section>
 <% end %>
 
 
 <%= link_to 'Back to Workouts', workouts_path %>
-<%= link_to 'Show Workout', workout_path %>
+<%= link_to 'Add exercise', new_workout_exercise_path(@workout.id) %>
 <%= link_to 'Delete Workout' , @workout, :method => :delete, :data => {:confirm => "Are you sure"}%>
 
 

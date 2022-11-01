@@ -26,6 +26,6 @@
 
 
 <%= link_to 'Update Profile', edit_user_path(@current_user) %>
-<%= link_to 'View Past Workouts', workouts_path %>
+<%= link_to 'View All Workouts', workouts_path %>
 <%= link_to 'Add New Workout', new_workout_path %>
 <%= link_to 'Delete Account' , user_path(@current_user), :method => :delete, :data => {:confirm => "Are you sure"}%>
