@@ -1,19 +1,26 @@
-<% if @current_user.name.present? %>
-    <h1><%= @current_user.name %>'s Workouts</h1>
-<% else%>
-    <h1>Your Workouts</h1>
-<% end %>
+<div class="d-flex justify-content-between">
+    <% if @current_user.name.present? %>
+        <h1><%= @current_user.name %>'s Workouts</h1>
+    <% else%>
+        <h1>Your Workouts</h1>
+    <% end %>
+    <%= button_to "Add a workout", new_workout_path, :method => 'get', :class => "btn btn-info flex-end" %>
+</div>
 
-<!-- Can I put these workouts into date order-->
-<% @current_user.workouts.each do |workout| %>
-    <section class="workout">
-        <p>Date: <%= workout.date %></p>
-        <p>Session Focus: <%= workout.focus %></p>
-        <p>Duration: <%= workout.duration %></p>
-        <p>Contains <%= workout.exercises.count %> logged exercises</p>
-        <%= link_to 'View details', workout_path(workout.id) %>
-        <%= link_to 'Edit Workout Info', edit_workout_path(workout.id) %>
-    </section>
+<% @current_user.workouts.order(:date).each_slice(2) do |row| %>
+<div class="row justify-content-evenly ">
+<% row.each do |workout| %>
+    <div class="card col-md-5 mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Workout</h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= workout.date %></h6>
+            <p class="card-text">Includes <%= workout.exercises.count %> logged exercises</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <%= button_to 'View details', workout_path(workout.id), :class => "card-link", :method => "get", :class => "btn btn-primary btn-sm" %>
+                <%= button_to 'Edit Workout Info', edit_workout_path(workout.id), :class => "card-link", :method => "get", :class => "btn btn-primary btn-sm" %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
 <% end %>
-
-<%= link_to "Add a workout", new_workout_path %>

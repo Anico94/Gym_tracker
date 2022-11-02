@@ -1,13 +1,13 @@
 <%= form_for @workout do |f| %>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
+    <%= f.label :date, :class => 'form-label' %>
+    <%= f.date_field :date, :class => 'form-control w-50 mb-3' %>
 
-    <%= f.label :focus %>
-    <%= f.text_field :focus %>
+    <%= f.label :focus, :class => 'form-label' %>
+    <%= f.text_field :focus, :class => 'form-control w-50 mb-3' %>
 
-    <%= f.label :duration %>
-    <%= f.number_field :duration, :placeholder => "In hours" %>
+    <%= f.label :duration, :class => 'form-label' %>
+    <%= f.number_field :duration, :placeholder => "In hours", :class => 'form-control w-50 mb-3' %>
 
-    <%= f.submit %>
+    <%= f.submit "Create", :class => "btn btn-success mt-2 w-50" %>
 <% end %>
 

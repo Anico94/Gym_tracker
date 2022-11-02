@@ -1,14 +1,14 @@
-<h1>Edit you're information below</h1>
+<h1>Edit your information below</h1>
 
-<%= form_for @current_user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name  %>
+    <%= form_for @current_user do |f| %>
+        <%= f.label :name, :class => 'form-label' %>
+        <%= f.text_field :name, :class => 'form-control w-50 mb-3' %>
 
-    <%= f.label :height %>
-    <%= f.number_field :height, :placeholder => "in cm" %>
+        <%= f.label :height, :class => 'form-label' %>
+        <%= f.number_field :height, :placeholder => "in cm", :class => 'form-control w-50 mb-3' %>
 
-    <%= f.label :weight %>
-    <%= f.number_field :weight, :placeholder => "in kgs" %>
+        <%= f.label :weight, :class => 'form-label' %>
+        <%= f.number_field :weight, :placeholder => "in kgs", :class => 'form-control w-50 mb-3' %>
 
-    <%= f.submit "Save Information" %>
-<% end %>
+        <%= f.submit "Save Information", :class => "btn btn-success mt-2 w-50" %>
+    <% end %>

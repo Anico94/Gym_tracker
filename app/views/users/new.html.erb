@@ -8,15 +8,16 @@
     </ol>
 <% end %>
 
+
 <%= form_for @user do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.label :email, :class => "form-label" %>
+    <%= f.email_field :email, :class => "form-control w-50" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :password, :class => "form-label" %>
+    <%= f.password_field :password, :class => "form-control w-50" %>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, :class => "form-label" %>
+    <%= f.password_field :password_confirmation, :class => "form-control w-50" %>
 
-    <%= f.submit "Register" %>
+    <%= f.submit "Register", :class => "btn btn-success mt-2 w-50" %>
 <% end %>

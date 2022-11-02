@@ -1,19 +1,19 @@
-<h1>Gym Tracker</h1>
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WNDVDbpqdz2N-Gx4XTcALt5jXqpNRzsP8Q&usqp=CAU" class="rounded mx-auto d-block" alt="Gym Logo">
+<div class="text-center">
+    <h1>Gym Tracker</h1>
 
-<h3 class="text-secondary">
-    The only fitness tracking app you will need!
-</h3>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WNDVDbpqdz2N-Gx4XTcALt5jXqpNRzsP8Q&usqp=CAU" class="rounded mx-auto d-block" alt="Gym Logo">
 
+    <h3 class="text-secondary">
+        Keep track of your gym workouts.
+    </h3>
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-center">
-    <%= button_to "Sign Up", new_user_path, :method => "get", :class => "btn btn-primary btn-lg" %>
-    <%= button_to "Login", login_path, :method => "get", :class => "btn btn-secondary btn-lg"%>
-</div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <%= button_to "Sign Up", new_user_path, :method => "get", :class => "btn btn-primary btn-lg" %>
+        <%= button_to "Login", login_path, :method => "get", :class => "btn btn-secondary btn-lg"%>
+    </div>
 
-
-
+    </div>
 
 <% if @current_user.present? %>
     <h2>Welcome Back <%= @current_user.email %></h2>

@@ -1,23 +1,37 @@
-<h1>Workout <%= @workout.date %></h1>
+<div class="d-flex justify-content-between">
+    <h1>Workout <%= @workout.date %></h1>
+    <%= link_to 'Add exercise', new_workout_exercise_path(@workout.id), :method => 'get', :class => "btn btn-primary btn-lg text-center" %>
+</div>
+<p>Duration of workout: <%= @workout.duration %></p>
+<p>Focus of Workout: <%= @workout.focus %></p>
 
-
-
-<% @workout.exercises.order(:created_at).each_with_index do |exercise, index| %>
-    <section class="exercise">
-        <h3>Exercise <%= index + 1 %>: <%= exercise.name%></h3>
-        <p><%= "Weight: #{exercise.weight}" if exercise.weight.present?  %></p>
-        <p><%= "Reps #{exercise.repetitions}" if exercise.repetitions.present? %></p>
-        <p><%= "Sets #{exercise.sets}" if exercise.sets.present? %></p>
-        <p><%= "Distance #{exercise.distance}" if exercise.distance.present? %></p>
-        <p><%= "Time #{exercise.duration}" if exercise.duration.present? %></p>
-        <%= link_to 'Edit Exercise', edit_exercise_path(exercise.id) %>
-        <%= link_to 'Delete Exercise', exercise_path(exercise.id), :method => :delete, :data => {:confirm => "Are you sure"} %>
-    </section>
+<% @workout.exercises.order(:created_at).each_slice(2).with_index do |row,i| %>
+<div class="row justify-content-evenly g-0">
+<% row.each_with_index do |exercise,index| %>
+    <div class="card col-5 md-5 mb-3">
+        <div class="card-header">
+            Exercise <%= 2*i + index + 1 %>: <%= exercise.name%>
+        </div>
+        <ul class="list-group list-group-flush">
+        <% %i(weight repetitions sets distance duration).each do |method|%>
+        <% if exercise.try(method)%>
+            <li class="list-group-item"><%= method.to_s.capitalize %>: <%= exercise.try(method)%></li>
+        <% end %>
+        <% end %>
+            <li class="list-group-item">
+                <div class="d-grid gap-2 d-md-flex justify-content-center">
+                    <%= button_to 'Edit', edit_exercise_path(exercise.id), :method => 'get',:class => "btn btn-primary btn-sm" %>  
+                    <%= button_to 'Delete', exercise_path(exercise.id), :method => "delete", :data => {:confirm => "Are you sure"},:class => "btn btn-danger btn-sm" %>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <% end %>
+</div>
 <% end %>
 
-
-<%= link_to 'Back to Workouts', workouts_path %>
-<%= link_to 'Add exercise', new_workout_exercise_path(@workout.id) %>
-<%= link_to 'Delete Workout' , @workout, :method => :delete, :data => {:confirm => "Are you sure"}%>
-
+<div class="d-grid gap-2 d-md-flex justify-content-md-center mb-5">
+    <%= link_to 'Back to Workouts', workouts_path, :method => "get", :class => "btn btn-primary btn-sm" %>
+    <%= link_to 'Delete Workout' , @workout, :method => "delete", :data => {:confirm => "Are you sure"}, :class => "btn btn-danger btn-sm"%>
+</div>
 

@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_secure_password
     validates :email, :uniqueness => true, :presence => true
     has_many :workouts
+    has_many :exercises, :through => :workouts
 
     def self.bmi_calculator weight, height
         bmi = (weight/ height**2 * 10000).round(2)

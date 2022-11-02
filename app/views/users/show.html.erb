@@ -24,8 +24,8 @@
     <p>BMI: <%= @bmi %> (<%= @bmi_cat %>)</p>
 <% end %>
 
-
-<%= link_to 'Update Profile', edit_user_path(@current_user) %>
-<%= link_to 'View All Workouts', workouts_path %>
-<%= link_to 'Add New Workout', new_workout_path %>
-<%= link_to 'Delete Account' , user_path(@current_user), :method => :delete, :data => {:confirm => "Are you sure"}%>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <%= button_to 'Update Profile', edit_user_path(@current_user), :method => "get", :class => "btn btn-primary btn-sm" %>
+    <%= button_to 'View All Workouts', workouts_path, :method => 'get', :class => "btn btn-primary btn-sm" %>
+    <%= button_to 'Delete Account' , user_path(@current_user), :method => "delete", :data => {:confirm => "Are you sure"}, :class => "btn btn-danger btn-sm"%>
+</div>

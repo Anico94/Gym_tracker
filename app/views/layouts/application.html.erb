@@ -10,8 +10,27 @@
   </head>
 
   <body>
-    <div class="container text-center">
-      <nav>
+    <div class="container">
+      <nav class="navbar mb-3" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+        <% if @current_user.present? %>
+          <%= link_to "Profile", user_path(@current_user) %>
+          <%= link_to "Workouts", workouts_path %>
+          <%= link_to "Sign Out (#{ @current_user.email})", login_path, :method => 'delete' %>
+        <% else%>
+          <%= link_to 'Home', root_path %>
+          <%= link_to 'All users', users_path %>
+        <% end %>
+        </div>
+      </nav>
+
+
+
+
+
+
+
+      <!-- <nav>
         <% if @current_user.present? %>
           <%= link_to "Profile", user_path(@current_user) %>
           <%= link_to "Workouts", workouts_path %>
@@ -20,7 +39,7 @@
           <%= link_to 'Home', root_path %>
           <%= link_to 'All users', users_path %>
         <% end %>
-      </nav>
+      </nav> -->
       
       <%= yield %>
     </div>
