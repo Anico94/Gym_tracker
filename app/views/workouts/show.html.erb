@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between">
     <h1>Workout <%= @workout.date %></h1>
-    <%= link_to 'Add exercise', new_workout_exercise_path(@workout.id), :method => 'get', :class => "btn btn-primary btn-lg text-center" %>
+    <%= link_to 'Add exercise', new_workout_exercise_path(@workout.id), :method => 'get', :class => "btn btn-primary text-center" %>
 </div>
 <p>Duration of workout: <%= @workout.duration %></p>
 <p>Focus of Workout: <%= @workout.focus %></p>
@@ -8,7 +8,7 @@
 <% @workout.exercises.order(:created_at).each_slice(2).with_index do |row,i| %>
 <div class="row justify-content-evenly g-0">
 <% row.each_with_index do |exercise,index| %>
-    <div class="card col-5 md-5 mb-3">
+    <div class="card col-5 md-5 mb-3 border border-secondary">
         <div class="card-header">
             Exercise <%= 2*i + index + 1 %>: <%= exercise.name%>
         </div>

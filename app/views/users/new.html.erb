@@ -1,23 +1,23 @@
-<h1>Sign Up</h1>
+<div class="container">
+    <h1>Sign Up</h1>
+    <% if @user.errors.any? %>
+        <ol>
+            <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ol>
+    <% end %>
 
-<% if @user.errors.any? %>
-    <ol>
-        <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-    </ol>
-<% end %>
+    <%= form_for @user do |f| %>
+        <%= f.label :email, :class => "form-label" %>
+        <%= f.email_field :email, :class => "form-control w-50" %>
 
+        <%= f.label :password, :class => "form-label" %>
+        <%= f.password_field :password, :class => "form-control w-50" %>
 
-<%= form_for @user do |f| %>
-    <%= f.label :email, :class => "form-label" %>
-    <%= f.email_field :email, :class => "form-control w-50" %>
+        <%= f.label :password_confirmation, :class => "form-label" %>
+        <%= f.password_field :password_confirmation, :class => "form-control w-50" %>
 
-    <%= f.label :password, :class => "form-label" %>
-    <%= f.password_field :password, :class => "form-control w-50" %>
-
-    <%= f.label :password_confirmation, :class => "form-label" %>
-    <%= f.password_field :password_confirmation, :class => "form-control w-50" %>
-
-    <%= f.submit "Register", :class => "btn btn-success mt-2 w-50" %>
-<% end %>
+        <%= f.submit "Register", :class => "btn btn-success mt-2 w-50" %>
+    <% end %>
+</div>

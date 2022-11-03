@@ -9,38 +9,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="container">
-      <nav class="navbar mb-3" style="background-color: #e3f2fd;">
-        <div class="container-fluid">
-        <% if @current_user.present? %>
-          <%= link_to "Profile", user_path(@current_user) %>
-          <%= link_to "Workouts", workouts_path %>
-          <%= link_to "Sign Out (#{ @current_user.email})", login_path, :method => 'delete' %>
-        <% else%>
-          <%= link_to 'Home', root_path %>
-          <%= link_to 'All users', users_path %>
-        <% end %>
+  <body class="bg-secondary bg-gradient" >
+    <div class="container bg-light p-2 text-dark bg-opacity-75 min-vh-100">
+      <nav class="navbar navbar-dark bg-dark mb-3 rounded-2 border border-light border-5">
+        <div class="container-fluid text-light">
+          <%= link_to "Home", root_path, :class => "nav-link" %>
+          <% if @current_user.present? %>
+            <%= link_to "Profile", user_path(@current_user), :class => "nav-link" %>
+            <%= link_to "Workouts", workouts_path, :class => "nav-link" %>
+            <%= link_to "Sign Out (#{ @current_user.email})", login_path, :method => 'delete', :class => "nav-link" %>
+            <% if @current_user.admin%>
+              <%= link_to 'All users', users_path, :class => "nav-link" %>
+            <% end %>
+          <% end %>
         </div>
       </nav>
-
-
-
-
-
-
-
-      <!-- <nav>
-        <% if @current_user.present? %>
-          <%= link_to "Profile", user_path(@current_user) %>
-          <%= link_to "Workouts", workouts_path %>
-          <%= link_to "Sign Out", login_path, :method => 'delete' %>
-        <% else%>
-          <%= link_to 'Home', root_path %>
-          <%= link_to 'All users', users_path %>
-        <% end %>
-      </nav> -->
-      
+    
       <%= yield %>
     </div>
   </body>

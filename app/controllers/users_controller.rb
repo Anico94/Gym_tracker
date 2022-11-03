@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :check_for_admin, :only => [:index]
   
   def index
     @user = User.all

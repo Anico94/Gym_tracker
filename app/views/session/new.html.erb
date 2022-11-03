@@ -1,20 +1,21 @@
-<h1>Login</h1>
+<div class="container">
+    <h1>Login</h1>
+    <%= form_tag login_path do %>
+        <%= label_tag :email, nil ,:class => "form-label"%>
+        <%= email_field_tag :email,nil, :class => "form-control w-50" %>
 
-<%= form_tag login_path do %>
-    <%= label_tag :email, nil ,:class => "form-label"%>
-    <%= email_field_tag :email,nil, :class => "form-control w-50" %>
+        <%= label_tag :password, nil, :class => "form-label"%>
+        <%= password_field_tag :password, nil, :class => "form-control w-50" %>
 
-    <%= label_tag :password, nil, :class => "form-label"%>
-    <%= password_field_tag :password, nil, :class => "form-control w-50" %>
+        <%= submit_tag "Login", :class => "btn btn-success mt-2 w-50" %>
+    <% end %>
 
-    <%= submit_tag "Login", :class => "btn btn-success mt-2 w-50" %>
-<% end %>
-
-<% if flash[:error].present?%>
-    <div class="alert alert-danger w-50 mt-2" role="alert">
-        <%= flash[:error] %>
-    </div>
-<% end %>
+    <% if flash[:error].present?%>
+        <div class="alert alert-danger w-50 mt-2" role="alert">
+            <%= flash[:error] %>
+        </div>
+    <% end %>
+</div>
 
 
 

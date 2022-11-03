@@ -4,13 +4,13 @@
     <% else%>
         <h1>Your Workouts</h1>
     <% end %>
-    <%= button_to "Add a workout", new_workout_path, :method => 'get', :class => "btn btn-info flex-end" %>
+    <%= button_to "Add a workout", new_workout_path, :method => 'get', :class => "btn btn-primary flex-end" %>
 </div>
 
 <% @current_user.workouts.order(:date).each_slice(2) do |row| %>
 <div class="row justify-content-evenly ">
 <% row.each do |workout| %>
-    <div class="card col-md-5 mb-3">
+    <div class="card col-md-5 mb-3 border border-secondary">
         <div class="card-body">
             <h5 class="card-title">Workout</h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= workout.date %></h6>
