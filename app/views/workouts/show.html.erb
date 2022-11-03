@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between">
     <h1>Workout <%= @workout.date %></h1>
-    <%= link_to 'Add exercise', new_workout_exercise_path(@workout.id), :method => 'get', :class => "btn btn-primary text-center" %>
+    <%= link_to 'Add exercise', new_workout_exercise_path(@workout.id), :method => 'get', :class => "btn btn-primary btn-lg text-center" %>
 </div>
 <p>Duration of workout: <%= @workout.duration %></p>
 <p>Focus of Workout: <%= @workout.focus %></p>

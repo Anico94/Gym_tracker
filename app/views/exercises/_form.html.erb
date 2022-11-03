@@ -7,8 +7,8 @@
             <%= f.text_field :name, :required => true, :placeholder => "Create name or select existing exercise", :class => 'form-control mb-3' %>
         </div>
         <div class="col">
-            <p>Select for an existing exercise</p>
-            <%= select_tag "exercises", raw('<option></option><option>' + @current_user.exercises.pluck(:name).uniq.join('</option> <option>') + '</option>'), :class => 'form-select'%>
+            <label> Select for an existing exercise</label>
+            <%= select_tag "exercises", raw('<option></option><option>' + @current_user.exercises.pluck(:name).uniq.join('</option> <option>') + '</option>'), :class => 'form-select mt-2'%>
         </div>
     </div>
 
