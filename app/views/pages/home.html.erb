@@ -1,13 +1,10 @@
-
 <div class="text-center">
     <h1>Gym Tracker</h1>
 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6WNDVDbpqdz2N-Gx4XTcALt5jXqpNRzsP8Q&usqp=CAU" class="rounded mx-auto d-block" alt="Gym Logo">
-
+    <%= image_tag("home.jpg", :class => 'rounded mx-auto d-block', :alt => "Gym Home Image") %>
     <h3 class="text-secondary">
         Keep track of your gym workouts!
     </h3>
-
 
 <% if @current_user.present? %>
     <h2>You're already logged in as <%= @current_user.email %></h2>

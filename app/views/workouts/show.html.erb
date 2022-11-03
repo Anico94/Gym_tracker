@@ -14,7 +14,7 @@
                 Exercise <%= 2*i + index + 1 %>: <%= exercise.name%>
             </div>
             <ul class="list-group list-group-flush">
-            <% %i(weight repetitions sets distance duration).each do |method|%>
+            <% %i(weight sets repetitions distance duration).each do |method|%>
             <% if exercise.try(method)%>
                 <li class="list-group-item"><%= method.to_s.capitalize %>: <%= exercise.try(method)%></li>
             <% end %>

@@ -1,24 +1,33 @@
-# README
+# Gym Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Home Page](/app/assets/images/application.png "Home Page")
 
-Things you may want to cover:
+## Web application for tracking and producing workouts
+Sign up, set your profile information and start creating or recording workouts. Add exercises to each workout and produce a pdf copy to send to friends family or clients. 
 
-* Ruby version
+## Coding Languages
+ * HTML 
+ * SCSS - Bootstrap was used for styling
+ * Ruby
+ * Rails 
+ * Javascript
+ * JQuery
 
-* System dependencies
+ ## Ruby gems included
+ * bootstrap
+ * jquery-rails
+ * wicked_pdf
+ * wkhtmltopdf-binary
 
-* Configuration
+## Sign up and get tracking at the link below:
+https://gym-tracker1234.herokuapp.com/
 
-* Database creation
+## Functionality to come .....
+Your profile page will soon have personal bests displayed base on information that you have recorded.
 
-* Database initialization
+## Acknowledgements
+* Thank you to [Loden Gendun](https://github.com/Tenzang) for all the help and support to visit his github I have attached the link to his name.
+* Thank you to [The Blade](https://github.com/wofockham) to visit his github I have attached the link to his name.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...

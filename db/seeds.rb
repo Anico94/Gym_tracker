@@ -57,6 +57,16 @@ e11 = Exercise.create(:name => '3km Run', :distance => 3, :duration => 12.5)
 e12 = Exercise.create(:name => '5km Run', :distance => 5, :duration => 23.5)
 e13 = Exercise.create(:name => '5km Run', :distance => 5, :duration => 26)
 
+e14 = Exercise.create(:name => '3km Run', :distance => 3, :duration => 12.5)
+e15 = Exercise.create(:name => '3km Run', :distance => 3, :duration => 12.5)
+e16 = Exercise.create(:name => '5km Run', :distance => 5, :duration => 23.5)
+e17 = Exercise.create(:name => '5km Run', :distance => 5, :duration => 26)
+
+e18 = Exercise.create(:name => 'Squats', :weight => 50, :repetitions => 1)
+e19 = Exercise.create(:name => 'Squats', :weight => 70, :repetitions => 5, :sets => 3)
+e20 = Exercise.create(:name => 'Squats', :weight => 90, :repetitions => 3, :sets => 2)
+
+
 puts "#{Exercise.count} Exercises Created"
 
 #Add workout to user profiles
@@ -66,6 +76,9 @@ u3.workouts << w4 << w9
 
 
 #Add exercises to workouts
+
+w1.exercises << e14 << e15 << e16 << e17 
+w2.exercises << e18 << e19 << e20
 w3.exercises << e1 << e2 << e5
 w8.exercises << e3 << e4 << e6
 
