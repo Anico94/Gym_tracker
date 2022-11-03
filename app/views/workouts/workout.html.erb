@@ -1,0 +1,15 @@
+<h1>Workout: <%= @workout.date.strftime '%A %B %e, %Y' %></h1> 
+
+
+<% @workout.exercises.each_with_index do |exercise, index|%>
+    <h4>Exercise <%= index + 1 %>: <%= exercise.name %></h4>
+    <ul>
+    <% %i(weight repetitions sets distance duration).each do |method|%>
+        <% if exercise.try(method)%>
+            <li><%= method.to_s.capitalize %>: <%= exercise.try(method)%></li>
+        <% end %>
+    <% end %>
+    </ul>
+<% end %>
+
+<hr>

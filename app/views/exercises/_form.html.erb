@@ -1,4 +1,3 @@
-
 <%= form_for [@workout, @exercise]  do |f| %>
     
     <div class="row">
@@ -8,7 +7,7 @@
         </div>
         <div class="col">
             <label> Select for an existing exercise</label>
-            <%= select_tag "exercises", raw('<option></option><option>' + @current_user.exercises.pluck(:name).uniq.join('</option> <option>') + '</option>'), :class => 'form-select mt-2'%>
+            <%= select_tag "exercises", raw('<option></option><option>' + @current_user.exercises.pluck(:name).uniq.join('</option> <option>') + '</option>'), :class => 'form-select '%>
         </div>
     </div>
 
@@ -34,5 +33,5 @@
     <%= f.label :duration, :class => 'form-label' %>
     <%= f.number_field :duration, :placeholder => "in minutes", :class => 'form-control w-50 mb-3' %>
 
-    <%= f.submit "Create", :class => "btn btn-success mt-2 w-50" %>
+    <%= f.submit "Create", :class => "btn btn-success mb-3 w-50" %>
 <% end %>

@@ -16,6 +16,12 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find params[:id]
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Workout #{@workout.date}", template: "workouts/workout.html.erb"  # Excluding ".pdf" extension.
+      end
+    end
   end
 
   def edit

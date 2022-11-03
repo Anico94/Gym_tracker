@@ -10,7 +10,7 @@
   </head>
 
   <body class="bg-secondary bg-gradient" >
-    <div class="container bg-light p-2 text-dark bg-opacity-75 min-vh-100">
+    <div class="container bg-light p-10 text-dark bg-opacity-75 min-vh-100">
       <nav class="navbar navbar-dark bg-dark mb-3 rounded-2 border border-light border-5">
         <div class="container-fluid text-light">
           <%= link_to "Home", root_path, :class => "nav-link" %>
@@ -24,7 +24,6 @@
           <% end %>
         </div>
       </nav>
-    
       <%= yield %>
     </div>
   </body>

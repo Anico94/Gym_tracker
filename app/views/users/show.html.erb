@@ -1,31 +1,33 @@
-<h1>Profile</h1>
+<div class="container"></div>
+    <h1>Profile</h1>
 
-<p>Email: <%= @current_user.email %></p>
+    <p>Email: <%= @current_user.email %></p>
 
-<% if @current_user.name.present? %>
-    <p>Name: <%= @current_user.name %></p>
-    <% else %>
-    <p>Update Profile to add name</p>
-<% end %>
+    <% if @current_user.name.present? %>
+        <p>Name: <%= @current_user.name %></p>
+        <% else %>
+        <p>Update Profile to add name</p>   
+    <% end %>
 
-<% if @current_user.height.present? %>
-    <p>Height: <%= @current_user.height %>cm</p>
-    <% else %>
-    <p>Update Profile to add height</p>
-<% end %>
+    <% if @current_user.height.present? %>
+        <p>Height: <%= @current_user.height %>cm</p>
+        <% else %>
+        <p>Update Profile to add height</p>
+    <% end %>
 
-<% if @current_user.weight.present? %>
-    <p>Weight: <%= @current_user.weight %>kg</p>
-    <% else %>
-    <p>Update Profile to add weight</p> 
-<% end %>
+    <% if @current_user.weight.present? %>
+        <p>Weight: <%= @current_user.weight %>kg</p>
+        <% else %>
+        <p>Update Profile to add weight</p> 
+    <% end %>
 
-<% if  @current_user.weight.present? && @current_user.height.present? %>
-    <p>BMI: <%= @bmi %> (<%= @bmi_cat %>)</p>
-<% end %>
+    <% if  @current_user.weight.present? && @current_user.height.present? %>
+        <p>BMI: <%= @bmi %> (<%= @bmi_cat %>)</p>
+    <% end %>
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-center">
-    <%= button_to 'Update Profile', edit_user_path(@current_user), :method => "get", :class => "btn btn-primary btn-sm" %>
-    <%= button_to 'View All Workouts', workouts_path, :method => 'get', :class => "btn btn-primary btn-sm" %>
-    <%= button_to 'Delete Account' , user_path(@current_user), :method => "delete", :data => {:confirm => "Are you sure"}, :class => "btn btn-danger btn-sm"%>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <%= button_to 'Update Profile', edit_user_path(@current_user), :method => "get", :class => "btn btn-primary btn-sm" %>
+        <%= button_to 'View All Workouts', workouts_path, :method => 'get', :class => "btn btn-primary btn-sm" %>
+        <%= button_to 'Delete Account' , user_path(@current_user), :method => "delete", :data => {:confirm => "Are you sure"}, :class => "btn btn-danger btn-sm"%>
+    </div>
 </div>
