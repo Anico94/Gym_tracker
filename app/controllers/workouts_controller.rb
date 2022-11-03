@@ -19,7 +19,7 @@ class WorkoutsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "Workout #{@workout.date}", template: "workouts/workout.html.erb"  # Excluding ".pdf" extension.
+        render pdf: "Workout #{@workout.date}", template: "workouts/work.html.erb"  # Excluding ".pdf" extension.
       end
     end
   end

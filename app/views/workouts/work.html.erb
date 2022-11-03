@@ -1,6 +1,4 @@
 <h1>Workout: <%= @workout.date.strftime '%A %B %e, %Y' %></h1> 
-
-
 <% @workout.exercises.each_with_index do |exercise, index|%>
     <h4>Exercise <%= index + 1 %>: <%= exercise.name %></h4>
     <ul>
@@ -11,5 +9,4 @@
     <% end %>
     </ul>
 <% end %>
-
 <hr>
