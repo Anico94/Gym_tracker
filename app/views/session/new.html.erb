@@ -1,17 +1,22 @@
-<div class="container">
-    <h1>Login</h1>
+<div class='pe-5'>
+    <%= image_tag("logo.png", :class => 'image-logo mx-auto d-block rounded-circle mb-3') %>
+    <h3>Log in</h1>
+    <p class='fw-light'>Welcome back! Please enter your details.</p>
     <%= form_tag login_path do %>
-        <%= label_tag :email, nil ,:class => "form-label"%>
-        <%= email_field_tag :email,nil, :class => "form-control w-50" %>
+        <%= label_tag :email, nil ,:class => "form-label mb-0"%>
+        <%= email_field_tag :email,nil, :class => "form-control-sm w-100 mb-2", :placeholder => 'Enter your email' %>
 
-        <%= label_tag :password, nil, :class => "form-label"%>
-        <%= password_field_tag :password, nil, :class => "form-control w-50" %>
+        <%= label_tag :password, nil, :class => "form-label mb-0"%>
+        <%= password_field_tag :password, nil, :class => "form-control-sm w-100 mb-2" %>
 
-        <%= submit_tag "Login", :class => "btn btn-success mt-2 w-50" %>
+        <%= submit_tag "Login", :class => "btn btn-dark btn-sm mt-2 w-100" %>
     <% end %>
+    <p class="text-muted text-center">
+    Don't have an account? <%= link_to "Sign up", new_user_path %> 
+    </p>
 
     <% if flash[:error].present?%>
-        <div class="alert alert-danger w-50 mt-2" role="alert">
+        <div class="alert alert-danger d-flex align-items-center p-1" role="alert">
             <%= flash[:error] %>
         </div>
     <% end %>

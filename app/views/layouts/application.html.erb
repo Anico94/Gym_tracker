@@ -9,9 +9,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-secondary bg-gradient" >
-    <div class="container bg-light p-10 text-dark bg-opacity-75 min-vh-100">
-      <nav class="navbar navbar-dark bg-dark mb-3 rounded-2 border border-light border-5">
+  <body>
+    <div class='row'>
+      <div class="home-page-image min-vh-100 col">
+      
+      </div>
+      <div class='col d-flex align-items-center justify-content-center'>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+<nav class="navbar navbar-dark bg-dark mb-3 rounded-2 border border-light border-5">
         <div class="container-fluid text-light">
           <%= link_to "Home", root_path, :class => "nav-link" %>
           <% if @current_user.present? %>
@@ -24,7 +35,5 @@
           <% end %>
         </div>
       </nav>
-      <%= yield %>
-    </div>
-  </body>
-</html>
+
+-->

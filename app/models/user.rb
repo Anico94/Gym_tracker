@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :workouts
     has_many :exercises, :through => :workouts
 
+    #create methods to calculate BMI and the category
     def self.bmi_calculator weight, height
         bmi = (weight/ height**2 * 10000).round(2)
     end

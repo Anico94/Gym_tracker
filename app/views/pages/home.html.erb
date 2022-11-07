@@ -1,15 +1,10 @@
-<div class="text-center">
-    <h1>Gym Tracker</h1>
-
-    <%= image_tag("home.jpg", :class => 'rounded mx-auto d-block', :alt => "Gym Home Image") %>
-    <h3 class="text-secondary">
-        Keep track of your gym workouts!
-    </h3>
-
-<% if @current_user.present? %>
-    <h2>You're already logged in as <%= @current_user.email %></h2>
-<% else %>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-        <%= button_to "Sign Up", new_user_path, :method => "get", :class => "btn btn-primary btn-lg" %>
-        <%= button_to "Login", login_path, :method => "get", :class => "btn btn-secondary btn-lg"%>
-<% end %>
+<div class='container-sm'>
+    <h1>Log in</h1>
+    <h5>Welcome back! Please enter your details.</h5>
+    
+    
+    
+            <%= link_to "Sign Up", new_user_path, :class => "btn btn-primary btn-lg" %>
+            <%= button_to "Login", login_path, :method => "get", :class => "btn btn-secondary btn-lg"%>
+    <% end %>
+</div>
