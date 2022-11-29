@@ -1,5 +1,21 @@
-<div class="container">
-    <h1>Sign Up</h1>
+<div class='pe-5 ps-5 view-window'>
+    <%= image_tag("logo.png", :class => 'image-logo mx-auto d-block rounded-circle mb-3') %>
+    <h3 class="text-center">Sign Up</h1>
+    <%= form_for @user do |f| %>
+        <%= f.label :email, :class => "form-label mb-1" %>
+        <%= f.email_field :email, :class => "form-control w-100 mb-2" %>
+
+        <%= f.label :password, :class => "form-label mb-1" %>
+        <%= f.password_field :password, :class => "form-control w-100 mb-2" %>
+
+        <%= f.label :password_confirmation, :class => "form-label mb-1" %>
+        <%= f.password_field :password_confirmation, :class => "form-control w-100 mb-2" %>
+
+        <%= f.submit "Register", :class => "btn btn-dark mt-2 w-100" %>
+    <% end %>
+    <p class="text-muted text-center">
+    Return to <%= link_to "Login", root_path %>
+    </p>
     <% if @user.errors.any? %>
         <ol>
             <% @user.errors.full_messages.each do |msg| %>
@@ -7,20 +23,4 @@
             <% end %>
         </ol>
     <% end %>
-
-    <%= form_for @user do |f| %>
-        <%= f.label :email, :class => "form-label" %>
-        <%= f.email_field :email, :class => "form-control w-50" %>
-
-        <%= f.label :password, :class => "form-label" %>
-        <%= f.password_field :password, :class => "form-control w-50" %>
-
-        <%= f.label :password_confirmation, :class => "form-label" %>
-        <%= f.password_field :password_confirmation, :class => "form-control w-50" %>
-
-        <%= f.submit "Register", :class => "btn btn-success mt-2 w-50" %>
-    <% end %>
-    <p class="text-muted text-center">
-    Return to <%= link_to "Login", root_path %> 
-    </p>
 </div>

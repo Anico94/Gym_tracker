@@ -1,17 +1,17 @@
 <div class='pe-5 ps-5 view-window'>
     <%= image_tag("logo.png", :class => 'image-logo mx-auto d-block rounded-circle mb-3') %>
-    <h3>Log in</h1>
-    <p class='fw-light'>Welcome back! Please enter your details.</p>
+    <h3 class="text-center">Login</h1>
+    <p class='fw-light text-center'>Welcome back! Please enter your details.</p>
     <%= form_tag login_path do %>
-        <%= label_tag :email, nil ,:class => "form-label mb-0"%>
-        <%= email_field_tag :email,nil, :class => "form-control-sm w-100 mb-2", :placeholder => 'Enter your email' %>
+        <%= label_tag :email, nil ,:class => "form-label mb-1"%>
+        <%= email_field_tag :email,nil, :class => "form-control w-100 mb-2" %>
 
-        <%= label_tag :password, nil, :class => "form-label mb-0"%>
-        <%= password_field_tag :password, nil, :class => "form-control-sm w-100 mb-2" %>
+        <%= label_tag :password, nil, :class => "form-label mb-1"%>
+        <%= password_field_tag :password, nil, :class => "form-control w-100 mb-2" %>
 
-        <%= submit_tag "Login", :class => "btn btn-dark btn-sm mt-2 w-100" %>
+        <%= submit_tag "Login", :class => "btn btn-dark mt-2 w-100" %>
     <% end %>
-    <p class="text-muted text-center">
+    <p class="text-muted text-center mt-1">
     Don't have an account? <%= link_to "Sign up", new_user_path %> 
     </p>
 
