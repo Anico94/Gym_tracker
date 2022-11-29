@@ -2,16 +2,26 @@
 //     border: 1px solid black;
 // }
 
-div.home-page-image{
-    background-image: url('home-page.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: auto;
+div.home-page-image {
+  background-image: url("home-page.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: auto;
 }
 
-.image-logo{
-    height: 100px;
-    width: auto;
+.image-logo {
+  height: 100px;
+  width: auto;
 }
 
+.view-window {
+  height: 100vh;
+  vertical-align: center;
+}
+
+@media (max-width: 1350px) {
+  div.home-page-image {
+    display: none;
+  }
+}
