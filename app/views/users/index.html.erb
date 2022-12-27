@@ -1,7 +1,9 @@
-<h1>All users</h1>
+<div class='pe-5 ps-5 view-window'>
+    <h1>All users</h1>
 
-<% @user.each do |user| %>
-    <p>
-        <%= "#{user.email} #{user.name}" %>
-    </p>
-<% end %>
+    <% @user.each do |user| %>
+        <p>
+            <%= "#{user.email} #{user.name}" %>
+        </p>
+    <% end %>
+</div>

@@ -12,11 +12,11 @@
         <%= submit_tag "Login", :class => "btn btn-dark mt-2 w-100" %>
     <% end %>
     <p class="text-muted text-center mt-1">
-    Don't have an account? <%= link_to "Sign up", new_user_path %> 
+    Don't have an account? <%= link_to "Sign Up", new_user_path %> 
     </p>
 
     <% if flash[:error].present?%>
-        <div class="alert alert-danger d-flex align-items-center p-1" role="alert">
+        <div class="alert alert-danger d-flex align-items-center p-1 center-text" role="alert">
             <%= flash[:error] %>
         </div>
     <% end %>

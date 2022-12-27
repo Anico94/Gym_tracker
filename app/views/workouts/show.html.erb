@@ -1,4 +1,4 @@
-<div class="container pb-5">
+<div class="container mt-5 pb-5 pe-5 ps-5">
     <div class="d-flex justify-content-between">
         <h1>Workout: <%= @workout.date.strftime '%a %b %e, %Y' %></h1>
         <%= link_to 'Add exercise', new_workout_exercise_path(@workout.id), :method => 'get', :class => "btn btn-primary btn-lg text-center" %>

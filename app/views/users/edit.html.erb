@@ -1,4 +1,5 @@
-<h1>Edit your information below</h1>
+<div class="container pe-5 ps-5 view-window">
+    <h1>Edit Profile Info</h1>
 
     <%= form_for @current_user do |f| %>
         <%= f.label :name, :class => 'form-label' %>
@@ -12,3 +13,4 @@
 
         <%= f.submit "Save Information", :class => "btn btn-success mt-2 w-50" %>
     <% end %>
+</div>
